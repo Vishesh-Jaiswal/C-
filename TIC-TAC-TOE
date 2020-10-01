@@ -1,0 +1,232 @@
+#include<iostream.h>
+#include<conio.h>
+#include<stdio.h>
+void main()
+{
+ replay:
+ clrscr();
+ int i,gameno=1,moveofp1,moveofp2,a=1,b=2,c=3,d=4,e=5,f=6,g=7,h=8,k=9;
+ char p1[50],p2[50],ent[10],playagain,pos[10];
+ pos[a]=' ',pos[b]=' ',pos[c]=' ',pos[d]=' ',pos[e]=' ',pos[f]=' ',pos[g]=' ',pos[h]=' ',pos[k]=' ';
+ cout<<"\n               ----****>>> WELCOME TO THE GAME PALACE <<<****----"<<endl;
+ cout<<endl;
+ cout<<"                              >>> TIC TAC TOE <<<"<<endl;
+ cout<<endl;
+ for(i=0;i<80;i++)
+ {
+  cout<<"~";
+ }
+ cout<<endl;
+ cout<<"                            {` ABOUT & INSTRUCTIONS '}"<<endl;
+ cout<<"\n1) In this game player 1 has the first turn and `X' automatically."<<endl;
+ cout<<"2) Playesr has to enter a no. from 1-9 as his/her position."<<endl;
+ cout<<"3) First players who enters three `X' or `O' in a row,column or diagonal wins. "<<endl;
+ cout<<endl;
+ for(i=0;i<80;i++)
+ {
+  cout<<"~";
+ }
+ cout<<"\nEnter the name of Player 1 : ";
+ gets(p1);
+ cout<<"Enter the name of Player 2 : ";
+ gets(p2);
+ cout<<endl;
+ cout<<"\n                            |-> PRESS ENTER TO START <-|"<<endl;
+ gets(ent);
+ cout<<endl;
+ cout<<"                                  >>>> GAME "<<gameno++<<" <<<<"<<endl;
+ cout<<"                                      ~~~~~~~~"<<endl;
+ for(i=1;i<10;i++)
+ {
+  cout<<"\nPlayer 1 "<<char(16);
+  puts(p1);
+  cout<<"Player 2 "<<char(16);
+  puts(p2);
+  if(i%2!=0)
+  {
+   cout<<"                                    "<<pos[a]<<" | "<<pos[b]<<" | "<<pos[c]<<endl;
+   cout<<"                                  ~~~~|~~~|~~~~"<<endl;
+   cout<<"                                    "<<pos[d]<<" | "<<pos[e]<<" | "<<pos[f]<<endl;
+   cout<<"                                  ~~~~|~~~|~~~~"<<endl;
+   cout<<"                                    "<<pos[g]<<" | "<<pos[h]<<" | "<<pos[k]<<endl;
+   reenterp1:
+   cout<<"\nYour move (1-9) ( X ) => ";
+   puts(p1);
+   cin>>moveofp1;
+   if((pos[moveofp1]!='X')&&(pos[moveofp1]!='O'))
+   {
+    pos[moveofp1]='X';
+    goto check;
+    gamecontinuep1:
+   }
+   else
+   {
+    cout<<" >>> Invalid Entry "<<endl;
+    goto reenterp1;
+   }
+  }
+  else
+  {
+   cout<<"                                    "<<pos[a]<<" | "<<pos[b]<<" | "<<pos[c]<<endl;
+   cout<<"                                  ~~~~|~~~|~~~~"<<endl;
+   cout<<"                                    "<<pos[d]<<" | "<<pos[e]<<" | "<<pos[f]<<endl;
+   cout<<"                                  ~~~~|~~~|~~~~"<<endl;
+   cout<<"                                    "<<pos[g]<<" | "<<pos[h]<<" | "<<pos[k]<<endl;
+   reenterp2:
+   cout<<"\nYour move (1-9) ( O ) => ";
+   puts(p2);
+   cin>>moveofp2;
+   if((pos[moveofp2]!='X')&&(pos[moveofp2]!='O'))
+   {
+    pos[moveofp2]='O';
+    goto check;
+    gamecontinuep2:
+   }
+   else
+   {
+    cout<<" >>> Invalid Entry "<<endl;
+    goto reenterp2;
+   }
+  }
+ }
+ check:
+ if((pos[a]==pos[b])&&(pos[b]==pos[c])&&(pos[a]=='X'))
+ {
+  cout<<"                              !!!! * YOU WON * !!!!"<<endl;
+  cout<<"                                       ";
+  puts(p1);
+ }
+ else
+ if((pos[a]==pos[b])&&(pos[b]==pos[c])&&(pos[a]=='O'))
+ {
+  cout<<"                              !!!! * YOU WON * !!!!"<<endl;
+  cout<<"                                       ";
+  puts(p2);
+ }
+ else
+ if((pos[d]==pos[e])&&(pos[e]==pos[f])&&(pos[d]=='X'))
+ {
+  cout<<"                              !!!! * YOU WON * !!!!"<<endl;
+  cout<<"                                       ";
+  puts(p1);
+ }
+ else
+ if((pos[d]==pos[e])&&(pos[e]==pos[f])&&(pos[d]=='O'))
+ {
+  cout<<"                              !!!! * YOU WON * !!!!"<<endl;
+  cout<<"                                       ";
+  puts(p2);
+ }
+ else
+ if((pos[g]==pos[h])&&(pos[h]==pos[k])&&(pos[g]=='X'))
+ {
+  cout<<"                              !!!! * YOU WON * !!!!"<<endl;
+  cout<<"                                       ";
+  puts(p1);
+ }
+ else
+ if((pos[g]==pos[h])&&(pos[h]==pos[k])&&(pos[g]=='O'))
+ {
+  cout<<"                              !!!! * YOU WON * !!!!"<<endl;
+  cout<<"                                       ";
+  puts(p2);
+ }
+ else
+ if((pos[a]==pos[d])&&(pos[d]==pos[g])&&((pos[a]=='X')))
+ {
+  cout<<"                              !!!! * YOU WON * !!!!"<<endl;
+  cout<<"                                       ";
+  puts(p1);
+ }
+ else
+ if((pos[a]==pos[d])&&(pos[d]==pos[g])&&((pos[a]=='O')))
+ {
+  cout<<"                              !!!! * YOU WON * !!!!"<<endl;
+  cout<<"                                       ";
+  puts(p2);
+ }
+ else
+ if((pos[b]==pos[e])&&(pos[e]==pos[h])&&(pos[b]=='X'))
+ {
+  cout<<"                              !!!! * YOU WON * !!!!"<<endl;
+  cout<<"                                       ";
+  puts(p1);
+ }
+ else
+ if((pos[b]==pos[e])&&(pos[e]==pos[h])&&(pos[b]=='O'))
+ {
+  cout<<"                              !!!! * YOU WON * !!!!"<<endl;
+  cout<<"                                       ";
+  puts(p2);
+ }
+ else
+ if((pos[c]==pos[f])&&(pos[f]==pos[k])&&(pos[c]=='X'))
+ {
+  cout<<"                              !!!! * YOU WON * !!!!"<<endl;
+  cout<<"                                       ";
+  puts(p1);
+ }
+ else
+ if((pos[c]==pos[f])&&(pos[f]==pos[k])&&(pos[c]=='O'))
+ {
+  cout<<"                              !!!! * YOU WON * !!!!"<<endl;
+  cout<<"                                       ";
+  puts(p2);
+ }
+ else
+ if((pos[a]==pos[e])&&(pos[e]==pos[k])&&(pos[a]=='X'))
+ {
+  cout<<"                              !!!! * YOU WON * !!!!"<<endl;
+  cout<<"                                       ";
+  puts(p1);
+ }
+ else
+ if((pos[a]==pos[e])&&(pos[e]==pos[k])&&(pos[a]=='O'))
+ {
+  cout<<"                              !!!! * YOU WON * !!!!"<<endl;
+  cout<<"                                       ";
+  puts(p2);
+ }
+ else
+ if((pos[c]==pos[e])&&(pos[e]==pos[g])&&(pos[c]=='X'))
+ {
+  cout<<"                              !!!! * YOU WON * !!!!"<<endl;
+  cout<<"                                       ";
+  puts(p1);
+ }
+ else
+ if((pos[c]==pos[e])&&(pos[e]==pos[g])&&(pos[c]=='O'))
+ {
+  cout<<"                              !!!! * YOU WON * !!!!"<<endl;
+  cout<<"                                       ";
+  puts(p2);
+ }
+ else
+ if((i%2!=0)&&(i!=9))
+ goto gamecontinuep1;
+ else
+ if((i%2==0)&&(i!=9))
+ goto gamecontinuep2;
+ else
+ cout<<"                         >>>>> THE GAME IS A DRAW <<<<<"<<endl;
+ cout<<"                                    "<<pos[a]<<" | "<<pos[b]<<" | "<<pos[c]<<endl;
+ cout<<"                                  ~~~~|~~~|~~~~"<<endl;
+ cout<<"                                    "<<pos[d]<<" | "<<pos[e]<<" | "<<pos[f]<<endl;
+ cout<<"                                  ~~~~|~~~|~~~~"<<endl;
+ cout<<"                                    "<<pos[g]<<" | "<<pos[h]<<" | "<<pos[k]<<endl;
+ askagain:
+ cout<<"\n           }---***>>>> Do You Want To Play The Game Again..? <<<<***---{"<<endl;
+ cout<<"                                      Y or N"<<endl;
+ cin>>playagain;
+ if((playagain=='Y')||(playagain=='y'))
+ goto replay;
+ else
+ if((playagain=='N')||(playagain=='n'))
+ cout<<"                       {{{{ THANKS FOR PLAYING THE GAME }}}}"<<endl;
+ else
+ {
+  cout<<"                                  INVALID ENTRY"<<endl;
+  goto askagain;
+ }
+ getch();
+}
