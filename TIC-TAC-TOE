@@ -8,7 +8,7 @@ void main()
  int i,gameno=1,moveofp1,moveofp2,a=1,b=2,c=3,d=4,e=5,f=6,g=7,h=8,k=9;
  char p1[50],p2[50],ent[10],playagain,pos[10];
  pos[a]=' ',pos[b]=' ',pos[c]=' ',pos[d]=' ',pos[e]=' ',pos[f]=' ',pos[g]=' ',pos[h]=' ',pos[k]=' ';
- cout<<"\n               ----****>>> WELCOME TO THE GAME PALACE <<<****----"<<endl;
+ cout<<"\n               >>>>++++>>> WELCOME TO THE GAME PALACE <<<++++<<<<"<<endl;
  cout<<endl;
  cout<<"                              >>> TIC TAC TOE <<<"<<endl;
  cout<<endl;
